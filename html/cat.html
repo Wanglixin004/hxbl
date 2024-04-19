@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex">
+		<title>宠物</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				background-color: black;
+			}
+
+			button {
+				width: 100px;
+				height: 60px;
+				font-size: 30px;
+				border-radius: 20px;
+				color: yellow;
+				background-color: gray;
+				margin-left: 15px;
+			}
+
+			.cat {
+				width: 100%;
+				height: 420px;
+				background-color: black;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.button {
+				margin-top: 100px;
+				width: 100%;
+				height: 90px;
+				background-color: antiquewhite;
+				align-items: center;
+				display: flex;
+				justify-content: center;
+			}
+			.back{
+				margin-top: 10px;
+			}
+			/* .hudong{
+				margin-left: 20px;
+			} */
+		</style>
+	</head>
+	<body>
+		<div>
+			<button class="back"><a href="./index.html" style="color: yellow;">返回</a></button>
+		</div>
+		<div class="cat" id="cat">
+			<img id="cat1" src="img/cat/stand.gif" />
+		</div>
+		<div class="button">
+			<button class="weiyang" id="weiyang" onclick="changeImage()">喂养</button>
+			<button class="hudong" id="hudong" onclick="changeImage2()">互动</button>
+			<button class="sleep" id="sleep" onclick="changeImage3()">睡觉</button>
+		</div>
+		<script>
+			function changeImage() {
+				var image = document.getElementById('cat1');
+				image.src = 'img/cat/fashing.gif'; // 这里替换为你想要显示的图片的路径  
+				setTimeout(function() {
+					image.src = "img/cat/love.gif"; // 替换为你第二张图片的路径  
+					// 例如，再等待2秒后回到image1.jpg  
+					setTimeout(function() {
+						image.src = "img/cat/stand.gif"; // 替换为你初始图片的路径  
+					}, 2000); // 2000毫秒 = 2秒  
+				}, 2000); // 1000毫秒 = 1秒  
+			}
+
+			function changeImage2() {
+				var image = document.getElementById('cat1');
+				image.src = 'img/cat/sajiao.gif'; // 这里替换为你想要显示的图片的路径  
+				setTimeout(function() {
+					image.src = "img/cat/leftjump.gif"; // 替换为你第二张图片的路径  
+					setTimeout(function() {
+						image.src = "img/cat/rightjump.gif"; // 替换为你初始图片的路径  
+						setTimeout(function() {
+							image.src = "img/cat/stand.gif"; // 替换为你初始图片的路径  
+						}, 2000); // 2000毫秒 = 2秒
+					}, 2000); // 2000毫秒 = 2秒  
+				}, 2000); // 1000毫秒 = 1秒  
+			}
+
+			function changeImage3() {
+				var image = document.getElementById('cat1');
+				image.src = 'img/cat/sleep.gif'; // 这里替换为你想要显示的图片的路径  
+			}
+		</script>
+	</body>
+</html>
